@@ -57,10 +57,16 @@ export default function AnaliserSection() {
                 setData(emotions);  
             }
 
-        } catch (error: any) {
-            console.error("Erro ao analisar texto:", error.response?.data || error.message);
-            setLoading(false);
-            setError("Ocorreu um erro ao processar a requisição, tente novamente");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error("Erro ao analisar texto:", error.message);
+                setLoading(false);
+                setError("Ocorreu um erro ao processar a requisição, tente novamente");
+            } else {
+                console.error("Erro desconhecido:", error);
+                setLoading(false);
+                setError("Erro desconhecido, tente novamente");
+            }
         }
     };
 

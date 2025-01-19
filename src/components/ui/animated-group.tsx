@@ -1,4 +1,3 @@
-'use client';
 import { ReactNode } from 'react';
 import { motion, Variants } from 'motion/react';
 import React from 'react';
@@ -23,8 +22,8 @@ export type AnimatedGroupProps = {
     item?: Variants;
   };
   preset?: PresetType;
-  as?: React.ElementType;
-  asChild?: React.ElementType;
+  as?: React.ElementType;  // As string or component type
+  asChild?: React.ElementType;  // As string or component type
 };
 
 const defaultContainerVariants: Variants = {
@@ -152,14 +151,14 @@ function AnimatedGroup({
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
-  const MotionComponent = motion.create(as as keyof JSX.IntrinsicElements);
+  const MotionComponent = motion(as);  // Use motion(as) instead of motion.create
 
-  const MotionChild = motion.create(asChild as keyof JSX.IntrinsicElements);
+  const MotionChild = motion(asChild);  // Use motion(asChild) instead of motion.create
 
   return (
     <MotionComponent
-      initial='hidden'
-      animate='visible'
+      initial="hidden"
+      animate="visible"
       variants={containerVariants}
       className={className}
     >

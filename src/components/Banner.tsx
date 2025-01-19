@@ -5,7 +5,7 @@ import { TextEffect } from "./ui/text-effect";
 export default function Banner(){
     return(
         <section className="w-[70%] m-auto mt-10 text-center relative lg:w-1/2 ">
-            <Image src="/banner.png" alt="Banner image" width={300} height={600} className="lg:absolute  inset-0z-0 lg:right-[-250] top-[-100]"/>
+            <Image src="/banner.png" alt="Banner image" width={300} height={600} className="lg:absolute  inset-0z-0 lg:right-[-250px] top-[-100px]"/>
         <div className="space-y-5 z-10 relative"  >
             <h1 className="text-3xl pb-4 text-blue-400  lg:text-6xl space-y-4 font-semibold">
             <TextEffect per='char' preset='fade' speedReveal={0.4}>

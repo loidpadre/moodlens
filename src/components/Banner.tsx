@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import { TextRoll } from "./ui/text-roll";
 import { TextEffect } from "./ui/text-effect";
 
@@ -16,7 +15,7 @@ export default function Banner(){
             <TextRoll className=' text-2xl lg:text-4xl text-black dark:text-white'>
             Uma maneira de ver o estado emocional das pessoas através das palavras.
     </TextRoll>
-            <p className="lg:text-[13px] lg:w-[60%] m-auto text-zinc-400">"Descubra as emoções por trás das palavras com nosso aplicativo de análise de texto. Entenda como uma pessoa se sente com base no que escreve, com insights profundos e precisos para melhorar a comunicação e o bem-estar."</p>
+            <p className="lg:text-[13px] lg:w-[60%] m-auto text-zinc-400">Descubra as emoções por trás das palavras com nosso aplicativo de análise de texto. Entenda como uma pessoa se sente com base no que escreve, com insights profundos e precisos para melhorar a comunicação e o bem-estar.</p>
         </div>
     </section>
     )
